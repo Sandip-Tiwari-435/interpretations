@@ -1,0 +1,187 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 0 20px;
+  position: relative;
+  width: 100%;
+}
+
+.mobileHeading{
+  width: 100%;
+}
+
+.navLogo a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navItem {
+  margin-right: 20px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  /* max-width: 500px; */
+  /* overflow:hidden; */
+}
+
+.navItem a {
+  color: #fff;
+  text-decoration: none;
+  padding: 1em 0;
+  /* font-weight: bold; */
+  transition: color 0.3s;
+}
+
+.navItem a:hover {
+  color: #ffcc00;
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+}
+
+.searchInput,
+.filterDropdown,
+.searchButton {
+  padding: 5px 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.searchButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #333;
+  padding: 20px;
+  z-index: 1000;
+  /* transform: translateX(-100%); */
+  /* Hide by default */
+  transition: transform 0.3s ease-in-out;
+}
+
+.sidebar {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.modalHeadingCustomSidebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+.logo {
+  font-size: 24px;
+  color: white;
+}
+
+.gitRepo {
+  color: white;
+  font-size: x-large;
+  margin-right: 10px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.sidebar .searchInput,
+.sidebar .filterDropdown {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .navList {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+  }
+  .logo{
+    margin: 0 0 0 1em;
+    flex-shrink: 0;
+    font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+  }
+
+  .mobileHeading{
+    display: flex;
+  }
+
+  .navListMobile {
+    list-style: none;
+    margin: 1em 0;
+    padding: 0;
+  }
+
+  .navList.active {
+    display: flex;
+  }
+
+  .navItem {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: smaller;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .searchContainer {
+    flex-shrink: 0;
+    display: none;
+  }
+
+  .searchInput,
+  .filterDropdown,
+  .searchButton {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .navItem {
+    text-overflow: ellipsis;
+    white-space: word-wrap;
+    overflow: hidden;
+  }
+}

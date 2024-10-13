@@ -1,0 +1,2 @@
+change unique ids into yt video ids
+if a user tries to post a video id for which is already present in our db, and if it is not a multi post just redirect it to the page of the same video. 

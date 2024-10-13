@@ -1,0 +1,42 @@
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footerTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .socialLinks {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .socialLink {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+  }
+  
+  .socialLink:hover {
+    color: #aaa;
+  }
+  
+  .copyright {
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+  }
+  
