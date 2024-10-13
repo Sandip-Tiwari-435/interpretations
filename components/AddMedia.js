@@ -13,7 +13,7 @@ const AddMedia = ({ postId, handleAddMediaSubmit }) => {
         if(!artText && !photoUrl && !videoUrl) return;
         try {
             setIsSubmitting(true);
-            const res = await fetch(`http://localhost:3000/api/posts/${postId}`,{
+            const res = await fetch(`/api/posts/${postId}`,{
                 method:'PUT',
                 headers:{
                     'Content-Type':'application/json'

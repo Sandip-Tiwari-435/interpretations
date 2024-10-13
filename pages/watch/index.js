@@ -12,7 +12,7 @@ import NoComments from '../../components/NoComments';
 
 export async function getServerSideProps(context) {
     const v = context.query.v;
-    const resPost = await fetch(`http://localhost:3000/api/posts/${v}`);
+    const resPost = await fetch(`${process.env.DOMAIN}/api/posts/${v}`);
     const post = await resPost.json();
 
     if (resPost.ok) {
