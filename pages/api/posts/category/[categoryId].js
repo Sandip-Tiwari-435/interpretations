@@ -16,7 +16,7 @@ export default async function handler(req, res) {
         return res.status(400).json({ success: false, message: "No posts found for this category" });
 
       } catch (error) {
-        return res.status(400).json({ success: false, message: "No posts found for this category" });
+        return res.status(400).json({ success: false, message: "No posts found for this category",error:error.message });
       }
       break;
 

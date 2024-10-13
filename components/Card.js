@@ -5,9 +5,9 @@ const Card = ({ post }) => (
         <div key={post._id + "post-item"} className="post-item">
             <div className={`image-collage-card ${post.videoUrl.length + post.photoUrl.length + post.artText.length > 2 ? "grid" : ""}`}>
                 {post.videoUrl &&
-                    post.videoUrl.map((video) => (
+                    post.videoUrl.map((video,index) => (
                         // <div className={`image-collage ${post.videoUrl.length + post.photoUrl.length > 2 ? "grid" : ""}`}>
-                        <div className='grid-item'>
+                        <div key={'vid-grid-item'+video+index} className='grid-item'>
                             <img
                                 src={`https://img.youtube.com/vi/${video}/0.jpg`}
                                 alt={post.title}
@@ -19,9 +19,9 @@ const Card = ({ post }) => (
                 }
 
                 {post.photoUrl &&
-                    post.photoUrl.map((image) => (
+                    post.photoUrl.map((image,index) => (
                         // <div className={`image-collage ${post.videoUrl.length + post.photoUrl.length > 2 ? "grid" : ""}`}>
-                        <div className='grid-item'>
+                        <div key={'photo-grid-item'+image+index} className='grid-item'>
 
                             <img
                                 src={image}
@@ -34,8 +34,8 @@ const Card = ({ post }) => (
                 }
                 {
                     post.artText &&
-                    post.artText.map((text) =>
-                        <div className='grid-item'>
+                    post.artText.map((text,index) =>
+                        <div key={'text-grid-item'+index} className='grid-item'>
 
                             <div className='art-text-card'>
                                 {text}

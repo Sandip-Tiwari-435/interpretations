@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         }
         res.status(200).json(videos);
       } catch (error) {
-        res.status(400).json({ success: false });
+        res.status(400).json({ success: false,error });
       }
       break;
     case 'POST':
@@ -62,7 +62,7 @@ export default async function handler(req, res) {
         res.status(201).json(video);
       } catch (error) {
         console.log(error.message);
-        res.status(400).json({ success: false });
+        res.status(400).json({ success: false,error });
       }
       break;
     case 'DELETE':
@@ -70,7 +70,7 @@ export default async function handler(req, res) {
         const result = await Post.deleteMany();
         res.status(201).json(result.deletedCount);
       } catch (err) {
-        res.status(400).json({ success: false });
+        res.status(400).json({ success: false,err });
         console.error("Could not delete");
       }
       break;

@@ -20,7 +20,7 @@ export async function getServerSideProps(context) {
     }
 }
 
-const PostDetail = ({post}) => {
+const PostDetail = ({ post }) => {
     const [comments, setComments] = useState();
     const [comment, setComment] = useState('');
     const [author, setAuthor] = useState('');
@@ -186,7 +186,7 @@ const PostDetail = ({post}) => {
                     <h2>Interpretations</h2>
                     <div className='modal-heading-custom-comments-heading'>
                         <ToggleSwitch isToggled={showApprovedComments} onToggleChange={handleToggleChange} />
-                        <small>Approved By AI</small>
+                        <small>{showApprovedComments ? 'Approved' : 'Unapproved'} By AI</small>
                     </div>
                 </div>
                 <div className={`caution-message ${filteredComments?.length === 0 && 'no-display'}`} key={'caution-msg'}><span className='caution-heading'>⚠Caution:</span> Reading the below interpretations might cause you to lose your original perspective on the art</div>

@@ -59,12 +59,12 @@ export default function Navbar() {
               <li className={styles.navItem}><Link onClick={resetOptions} href="/home">Home</Link></li>
               <li className={styles.navItem}><Link onClick={resetOptions} href="/about">About Us</Link></li>
               {categories.map((c) => (
-                <li className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{capitaliseString(c.type)}</Link></li>
+                <li key={c.type} className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{capitaliseString(c.type)}</Link></li>
               ))}
             </ul>
           </div>
           <div className={styles.searchContainer}>
-            <a href="https://github.com/Sandip-Tiwari-435" className={styles.gitRepo} target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Sandip-Tiwari-435/interpretations" className={styles.gitRepo} target="_blank" rel="noopener noreferrer">
               <FaGithub />
             </a>
             <input
@@ -101,7 +101,7 @@ export default function Navbar() {
                 <li className={styles.navItem}><Link onClick={resetOptions} href="/home">Home</Link></li>
                 <li className={styles.navItem}><Link onClick={resetOptions} href="/about">About Us</Link></li>
                 {categories.map((c) => (
-                  <li className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{`${capitaliseString(c.type)} (${c.count})`}</Link></li>
+                  <li type={c.type} className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{`${capitaliseString(c.type)} (${c.count})`}</Link></li>
                 ))}
               </ul>
             </div>

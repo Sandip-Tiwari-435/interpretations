@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Masonry from 'react-masonry-css';
 import Card from '../../../components/Card';
 import NoPosts from '../../../components/NoPosts';

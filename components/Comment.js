@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Comment = ({ text, initialLikes, postId, commentId, author, created_at, handleCitation }) => {
   const [likes, setLikes] = useState(initialLikes);
   const [clicked, setClicked] = useState(false);
-  const regex = new RegExp(/^m\d+/, 'g');
 
   const handleLike = async () => {
     const initer = likes;
@@ -32,6 +31,7 @@ const Comment = ({ text, initialLikes, postId, commentId, author, created_at, ha
       }
 
     } catch (err) {
+      console.error(err);
       setLikes(initer);
     }
 
