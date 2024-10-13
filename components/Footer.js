@@ -9,7 +9,7 @@ const Footer = () => {
 
         <div className={styles.socialLinks}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} Your Developer Name. All rights reserved.
+            © {new Date().getFullYear()} Interpretations. All rights reserved.
           </div>
           <a href="https://github.com/Sandip-Tiwari-435" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
             <FaGithub />

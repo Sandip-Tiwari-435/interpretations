@@ -204,10 +204,10 @@ textarea {
   left: 50%;
   transform: translate(-50%, -50%);
   
-  max-width: 60vw;
+  /* max-width: 60vw; */
   background-size: cover;
   background-color:inherit;
-  padding: 20px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   outline: none;
@@ -741,7 +741,9 @@ input:checked+.slider:before {
 }
 
 .mediaviewer{
+  /* max-height: 60vh; */
   max-height: 60vh;
+  width:60vw;
   overflow: scroll;
   scrollbar-width: none;
 }
@@ -815,11 +817,12 @@ form::-webkit-scrollbar {
   }
 
   .mediaviewer{
-    width: 100%;
+    width: 80vw;
   }
 
   .collage-item:hover{
     scale:unset;
     z-index: 0;
   }
+
 }
