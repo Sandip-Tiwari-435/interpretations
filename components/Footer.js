@@ -8,15 +8,15 @@ const Footer = () => {
         <span>Made with ♥ by Sandip</span>
 
         <div className={styles.socialLinks}>
+          <div className={styles.copyright}>
+            © {new Date().getFullYear()} Your Developer Name. All rights reserved.
+          </div>
           <a href="https://github.com/Sandip-Tiwari-435" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
             <FaGithub />
           </a>
           <a href="https://www.linkedin.com/in/sandip435/" className={styles.socialLink} target="_blank" rel="noopener noreferrer">
             <FaLinkedin />
           </a>
-          <div className={styles.copyright}>
-            © {new Date().getFullYear()} Your Developer Name. All rights reserved.
-          </div>
         </div>
       </div>
     </footer>

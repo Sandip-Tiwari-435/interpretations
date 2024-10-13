@@ -30,6 +30,6 @@ export const capitaliseString = (s) =>{
 }
 
 export const getSeconds = (s) =>{
-  const li=s.split(":");
+  const li=s?.split(":");
   return parseInt(li[0])*60+parseInt(li[1]);
 }
