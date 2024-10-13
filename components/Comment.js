@@ -38,7 +38,7 @@ const Comment = ({ text, initialLikes, postId, commentId, author, created_at, ha
   };
 
   const transformText = (text) => {
-    const words = text.split(' ');
+    const words = text?.split(' ');
 
     const pattern = /^m\d+$/;
     const mediaNumberExtractionPattern = /(\d+)/g;

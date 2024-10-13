@@ -39,7 +39,7 @@ const PostDetail = ({ post }) => {
     const [timeToSeekTo, setTimeToSeekTo] = useState(0);
 
     let mediaList = [];
-    const flashTextList = process.env.NEXT_PUBLIC_FLASH_IN_TEXT_AREA.split("|");
+    const flashTextList = process.env.NEXT_PUBLIC_FLASH_IN_TEXT_AREA?.split("|");
 
     const iframeRef = useRef(null);
     const router = useRouter();
@@ -59,7 +59,7 @@ const PostDetail = ({ post }) => {
         makeMediaList(post);
 
         const updateVariable = () => {
-            setFlashTextVar(prev => (prev + 1) % flashTextList.length);
+            setFlashTextVar(prev => (prev + 1) % flashTextList?.length);
         };
 
         const intervalId = setInterval(updateVariable, 5000);
