@@ -49,7 +49,7 @@ export default async function handler(req, res) {
 
             } catch (error) {
                 console.log(error.message);
-                return res.status(400).json({ success: false, message: "Error while finding or creating post" });
+                return res.status(400).json({ success: false, message: "Error while finding or creating post",error });
             }
             break;
 

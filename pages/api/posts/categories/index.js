@@ -11,24 +11,23 @@ export default async function handler(req, res) {
                 const typesWithCount = await Post.aggregate([
                     {
                         $group: {
-                            _id: "$type", // Group by the 'type' field
-                            count: { $sum: 1 }, // Count the number of posts in each type
+                            _id: "$type", 
+                            count: { $sum: 1 }, 
                         },
                     },
                     {
-                        $sort: { count: -1 }, // Sort by count in descending order
+                        $sort: { count: -1 }, 
                     },
                 ]);
 
-                // Map the result to return only the types in the required format
                 const sortedTypes = typesWithCount.map((type) => ({
-                    type: type._id, // '_id' will hold the distinct 'type' value
+                    type: type._id, 
                     count: type.count,
                 }));
 
-                res.status(200).json(sortedTypes); // Return the sorted types as JSON
+                res.status(200).json(sortedTypes); 
             } catch (error) {
-                res.status(400).json({ success: false });
+                res.status(400).json({ success: false,error:error.message });
             }
             break;
         default:

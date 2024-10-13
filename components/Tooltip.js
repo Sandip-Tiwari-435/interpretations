@@ -1,13 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 const ToolTip = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const breakpointColumnsObj = {
-    default: 4,
-    1100: 2,
-    700: 1
-  };
 
   return (
     <>

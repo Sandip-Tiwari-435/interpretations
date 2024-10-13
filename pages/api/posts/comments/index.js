@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         });
         res.status(200).json(sortedComments);
       } catch (error) {
-        res.status(400).json({ success: false });
+        res.status(400).json({ success: false,error:error.message });
       }
       break;
 
@@ -51,7 +51,7 @@ export default async function handler(req, res) {
         const uploadedComment=post.comments[0];
         return res.status(201).json({obj:uploadedComment,aiResponseObject});
       } catch (error) {
-        return res.status(500).json({ message: 'Server error', error });
+        return res.status(500).json({ message: 'Server error',error:error.message });
       }
       break;
     case 'PUT':
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
   
         return res.status(200).json({ message: 'Like count updated', comment });
       } catch (error) {
-        return res.status(500).json({ message: 'Server error', error });
+        return res.status(500).json({ message: 'Server error',error });
       }
     default:
       return res.status(405).json({ message: 'Method not allowed' });

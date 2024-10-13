@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
 
 const MediaViewer = ({ isMediaOpen, textToShow, imgToShow, vidToShow, toggleMediaOpen, timeToSeekTo }) => {
@@ -24,7 +24,7 @@ const MediaViewer = ({ isMediaOpen, textToShow, imgToShow, vidToShow, toggleMedi
                             style={{ width: '100%' }}
                         />
                     }
-                     {textToShow &&
+                    {textToShow &&
                         <h1 className='art-text-media-viewer'>{textToShow}</h1>
                     }
                     {

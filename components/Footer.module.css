@@ -11,17 +11,11 @@
     margin: 0 auto;
   }
   
-  .footerTitle {
-    font-size: 24px;
-    margin-bottom: 10px;
-    font-weight: bold;
-  }
-  
   .socialLinks {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 15px;
-    margin-top: 20px;
   }
   
   .socialLink {
@@ -35,7 +29,6 @@
   }
   
   .copyright {
-    margin-top: 20px;
     font-size: 14px;
     color: #888;
   }

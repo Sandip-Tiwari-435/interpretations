@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-modal';
 
 const AddMedia = ({ postId, handleAddMediaSubmit }) => {
