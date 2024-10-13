@@ -14,8 +14,7 @@ const MediaViewer = ({ isMediaOpen, textToShow, imgToShow, vidToShow, toggleMedi
             >
                 <div className='image-collage mediaviewer'>
                     {vidToShow &&
-
-                        <iframe style={{ width: '100%' }} key={vidToShow} src={`https://www.youtube.com/embed/${vidToShow}?autoplay=1&cc_load_policy=1&cc_lang_pref=en&showinfo=0&loop=1&controls=0&playlist=${vidToShow}&start=${timeToSeekTo}`} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe style={{ width: '100%' }} key={vidToShow} src={`https://www.youtube.com/embed/${vidToShow}?autoplay=1&cc_load_policy=1&cc_lang_pref=en&showinfo=0&loop=1&controls=1&playlist=${vidToShow}&start=${timeToSeekTo}`} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     }
                     {imgToShow &&
                         <img

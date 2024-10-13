@@ -695,6 +695,7 @@ input:checked+.slider:before {
   font-weight: 400;
   font-size: larger;
   max-height: 200px;
+  height:100%;
   overflow: scroll;
   scrollbar-width: none;
   
