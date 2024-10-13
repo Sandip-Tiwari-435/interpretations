@@ -6,7 +6,7 @@ import Loader from '../components/Loader';
 export async function getServerSideProps() {
   let posts = null;
 
-  const res = await fetch(`http://localhost:3000/api/posts`);
+  const res = await fetch(`${process.env.DOMAIN}/api/posts`);
   const obj = await res.json();
   if (res.ok)
     posts = obj;

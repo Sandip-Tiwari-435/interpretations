@@ -15,7 +15,7 @@ export async function getServerSideProps(context) {
   if (search && search !== 'all') query.append('search', search);
   if (category && category !== 'all') query.append('category', category);
 
-  const res = await fetch(`http://localhost:3000/api/posts?${query.toString()}`); // Example API route
+  const res = await fetch(`${process.env.DOMAIN}/api/posts?${query.toString()}`); // Example API route
   const posts = await res.json();
 
   return {

@@ -5,7 +5,7 @@ import NoPosts from '../../../components/NoPosts';
 
 export async function getServerSideProps(context) {
     const category = context.params.category;
-    const res = await fetch(`http://localhost:3000/api/posts/category/${category}`);
+    const res = await fetch(`${process.env.DOMAIN}/api/posts/category/${category}`);
     const posts = await res.json();
 
     if (!res.ok) {
