@@ -101,7 +101,7 @@ export default function Navbar() {
                 <li className={styles.navItem}><Link onClick={resetOptions} href="/home">Home</Link></li>
                 <li className={styles.navItem}><Link onClick={resetOptions} href="/about">About Us</Link></li>
                 {categories.map((c) => (
-                  <li type={c.type} className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{`${capitaliseString(c.type)} (${c.count})`}</Link></li>
+                  <li key={c.type} className={styles.navItem}><Link onClick={resetOptions} href={`/posts/${c.type}`}>{`${capitaliseString(c.type)} (${c.count})`}</Link></li>
                 ))}
               </ul>
             </div>
