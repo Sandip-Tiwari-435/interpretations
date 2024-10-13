@@ -186,7 +186,7 @@ const PostDetail = ({ post }) => {
                     <h2>Interpretations</h2>
                     <div className='modal-heading-custom-comments-heading'>
                         <ToggleSwitch isToggled={showApprovedComments} onToggleChange={handleToggleChange} />
-                        <small>{showApprovedComments ? 'Approved' : 'Unapproved'} By AI</small>
+                        <small>Approved By AI</small>
                     </div>
                 </div>
                 <div className={`caution-message ${filteredComments?.length === 0 && 'no-display'}`} key={'caution-msg'}><span className='caution-heading'>⚠Caution:</span> Reading the below interpretations might cause you to lose your original perspective on the art</div>
