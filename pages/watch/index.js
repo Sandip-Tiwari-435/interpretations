@@ -158,9 +158,8 @@ const PostDetail = ({ post }) => {
                 <div className={`image-collage ${mediaLister.length > 2 ? "grid" : ""}`}>
                     {
                         mediaLister && mediaLister.map((p, index) =>
-                            <div className={`collage-item${mediaLister.length < 3 ? '-no-hover-zoom' : ''}`} key={post._id + '-collage-item' + index}>
+                            <div className={`collage-item`} key={post._id + '-collage-item' + index}>
                                 <div className="overlay">m{index + 1}</div>
-                                {console.log(process.env.NEXT_PUBLIC_MAIN_POST_YT_SRC_TEMPLATE)}
                                 {p.type === 'video' &&
                                     <iframe tabindex="0" ref={iframeRef} key={post._id + index} src={process.env.NEXT_PUBLIC_MAIN_POST_YT_SRC_TEMPLATE?.replaceAll("vidToShow",p.src)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen onLoad={onLoadFocus}></iframe>
                                 }
@@ -169,6 +168,7 @@ const PostDetail = ({ post }) => {
                                         src={p.src}
                                         alt={post.title}
                                         style={{ width: '100%' }}
+                                        className={`photo-main-post${mediaLister.length < 3 ? '-no-hover-zoom' : ''}`}
                                         onClick={showMedia}
                                     />
                                 }

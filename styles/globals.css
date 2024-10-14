@@ -39,7 +39,7 @@ text-align: left;
 .my-masonry-grid {
   display: flex;
   margin-left: -30px;
-  
+  min-height: 100vh;
   width: auto;
 }
 
@@ -460,16 +460,35 @@ align-items: center;
   object-fit: cover;
   border-radius: 5px;
   position: relative;
-  cursor: pointer;
+  /* cursor: pointer; */
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.collage-item:hover{
+/* .collage-item:hover{
   scale: 2;
   z-index: 1000;
-}
+} */
 
 .collage-item-no-hover-zoom {
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.photo-main-post:hover{
+  scale: 2;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.photo-main-post-no-hover-zoom {
   width: 100%;
   height: 100%;
   min-height: 200px;
