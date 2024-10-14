@@ -860,4 +860,21 @@ form::-webkit-scrollbar {
     right: 30px;
   }
 
+  .photo-main-post:hover{
+    scale:1;
+    z-index: auto;
+  }
+
+  .art-text-main-post:hover {
+    scale: 1;
+    z-index: auto;
+  }
+
+  .art-text-card:hover {
+    background-color: inherit;
+    color: black;
+    transition: none;
+    width: 100%;
+    z-index: 1000;
+  }
 }
