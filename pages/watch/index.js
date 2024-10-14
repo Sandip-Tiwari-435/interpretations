@@ -113,7 +113,7 @@ const PostDetail = ({ post }) => {
     }
 
     const handleCommentSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
         if (!comment.trim()) return;
         setIsSubmitting(true);
 

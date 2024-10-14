@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar'; // Import your Navbar component
 import PostFormModal from '../components/PostFormModal'; // Import your Navbar component
 import Loader from '../components/Loader';
 import Footer from '../components/Footer';
+import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
 
@@ -29,9 +30,13 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
+      <Head>
+        <title>Interpretations</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Navbar />
-      { loading ? <Loader /> :
-      (<Component {...pageProps} />)
+      {loading ? <Loader /> :
+        (<Component {...pageProps} />)
       }<PostFormModal />
       <Footer />
     </>
