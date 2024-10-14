@@ -6,9 +6,9 @@ import { isValidObjectId } from 'mongoose';
 const handleYouTubeVideo = async (id, res) => {
     try {
         const isValid = await checkYouTubeVideoExists(id);
-
         if (isValid) {
-            const postByYTVideoId = await Post.findOne({ videoUrl: id, photoUrl: [] });
+            const foundPosts = await Post.find({ videoUrl: { $in: [id] } });
+            const postByYTVideoId = foundPosts[0];
 
             if (postByYTVideoId) {
                 return res.status(200).json(postByYTVideoId);
@@ -49,22 +49,22 @@ export default async function handler(req, res) {
 
             } catch (error) {
                 console.log(error.message);
-                return res.status(400).json({ success: false, message: "Error while finding or creating post",error });
+                return res.status(400).json({ success: false, message: "Error while finding or creating post", error });
             }
             break;
 
         case 'PUT':
             try {
                 const post = await Post.findById(id);
-                if (req.body.artText) post.artText=[...post.artText,req.body.artText];
-                if (req.body.photoUrl) post.photoUrl=[...post.photoUrl,req.body.photoUrl];
-                if (req.body.videoUrl) post.videoUrl=[...post.videoUrl,req.body.videoUrl];
+                if (req.body.artText) post.artText = [...post.artText, req.body.artText];
+                if (req.body.photoUrl) post.photoUrl = [...post.photoUrl, req.body.photoUrl];
+                if (req.body.videoUrl) post.videoUrl = [...post.videoUrl, req.body.videoUrl];
 
                 await post.save();
-                res.status(200).json({success:true, message:"Medias successfully added to post",post});
-                
+                res.status(200).json({ success: true, message: "Medias successfully added to post", post });
+
             } catch (error) {
-                res.status(404).json({success:true, message:"Error while updating post",error:error.message});
+                res.status(404).json({ success: true, message: "Error while updating post", error: error.message });
             }
             break;
 

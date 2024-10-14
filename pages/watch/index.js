@@ -113,9 +113,10 @@ const PostDetail = ({ post }) => {
     }
 
     const handleCommentSubmit = async (e) => {
-        e.preventDefault(); 
+        e.preventDefault();
         if (!comment.trim()) return;
         setIsSubmitting(true);
+        setCloseStatusComment(true);
 
         try {
             const res = await fetch(`/api/posts/comments?videoId=${post?._id}`, {
@@ -136,15 +137,15 @@ const PostDetail = ({ post }) => {
                 }
                 setHasSubmitted(true);
                 setReason(obj.aiResponseObject.message);
-
                 setComments([obj.obj, ...comments]);
                 setComment('');
+                setCloseStatusComment(false);
+
             }
         } catch (e) {
             console.error(e);
         } finally {
             setIsSubmitting(false);
-            setCloseStatusComment(false);
         }
     };
 
@@ -161,7 +162,7 @@ const PostDetail = ({ post }) => {
                             <div className={`collage-item`} key={post._id + '-collage-item' + index}>
                                 <div className="overlay">m{index + 1}</div>
                                 {p.type === 'video' &&
-                                    <iframe tabindex="0" ref={iframeRef} key={post._id + index} src={process.env.NEXT_PUBLIC_MAIN_POST_YT_SRC_TEMPLATE?.replaceAll("vidToShow",p.src)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen onLoad={onLoadFocus}></iframe>
+                                    <iframe tabindex="0" ref={iframeRef} key={post._id + index} src={process.env.NEXT_PUBLIC_MAIN_POST_YT_SRC_TEMPLATE?.replaceAll("vidToShow", p.src)} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen onLoad={onLoadFocus}></iframe>
                                 }
                                 {p.type === 'photo' &&
                                     <img

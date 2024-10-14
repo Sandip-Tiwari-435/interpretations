@@ -44,6 +44,7 @@ export default async function handler(req, res) {
         }
         console.log("videoids",videoIds);
         if (videoIds?.length === 1) {
+    
           console.log("Entered video length",videoIds);
           const foundPosts = await Post.find({ videoUrl: { $in: [videoIds[0]] } });
           alreadyPresentPost = foundPosts[0];
@@ -67,6 +68,7 @@ export default async function handler(req, res) {
           }
         }
         if (alreadyPresentPost) {
+          console.log("AlreadyPresent", alreadyPresentPost);
           if(req.body.comments) alreadyPresentPost.comments = [req.body.comments[0], ...(alreadyPresentPost.comments)];
           await alreadyPresentPost.save();
           return res.status(202).json(alreadyPresentPost);
