@@ -37,7 +37,7 @@ export default async function handler(req, res) {
           if (videoId && videoId[1]) {
             return videoId[1];
           }
-          return null;
+          return null; 
         });
         if (videoIds.includes(null)) {
           return res.status(400).json({ message: "Invalid YT url" }, { success: false });

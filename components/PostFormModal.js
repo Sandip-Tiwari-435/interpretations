@@ -115,7 +115,7 @@ const PostFormModal = () => {
         },
         body: JSON.stringify(postData),
       });
-      const obj = await res.json();
+      const obj = await res.json(); 
 
       if (res.ok) {
         setIsModalOpen(false);
