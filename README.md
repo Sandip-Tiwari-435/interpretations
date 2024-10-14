@@ -1,4 +1,4 @@
-**Our Mission**
+**Our Mission**\n
 At Interpretations, we are committed to fostering meaningful conversations around art. We believe in the power of deep analysis and thoughtful reflection when it comes to understanding the emotional, technical, and societal impact of various art forms, whether it be visual, written, or performed.
 
 Our platform serves as a hub for individuals who seek to engage with art on a profound level, exploring complex themes such as mortality, identity, and societal issues.
