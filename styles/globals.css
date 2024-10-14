@@ -488,6 +488,12 @@ align-items: center;
   cursor: pointer;
 }
 
+.art-text-main-post:hover{
+  scale: 2;
+  z-index: 1000;
+  cursor: pointer;
+}
+
 .photo-main-post-no-hover-zoom {
   width: 100%;
   height: 100%;
@@ -844,6 +850,11 @@ form::-webkit-scrollbar {
   .collage-item:hover{
     scale:unset;
     z-index: 0;
+  }
+
+  .floating-button-custom{
+    bottom: 50px;
+  right: 30px;
   }
 
 }

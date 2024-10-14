@@ -24,7 +24,7 @@ export default async function handler(req, res) {
         }
         res.status(200).json(videos);
       } catch (error) {
-        res.status(400).json({ success: false,error });
+        res.status(400).json({ success: false, error });
       }
       break;
     case 'POST':
@@ -42,8 +42,22 @@ export default async function handler(req, res) {
         if (videoIds.includes(null)) {
           return res.status(400).json({ message: "Invalid YT url" }, { success: false });
         }
-        alreadyPresentPost=await Post.findOne({ videoUrl: videoIds, photoUrl: req.body.photoUrl, artText:req.body.artText });
+        console.log("videoids",videoIds);
+        if (videoIds?.length === 1) {
+          console.log("Entered video length",videoIds);
+          const foundPosts = await Post.find({ videoUrl: { $in: [videoIds[0]] } });
+          alreadyPresentPost = foundPosts[0];
+        }
+        else alreadyPresentPost = await Post.findOne({ videoUrl: videoIds, photoUrl: req.body.photoUrl, artText: req.body.artText });
         req.body.videoUrl = videoIds;
+      }
+      else if (req.body?.photoUrl?.length === 1) {
+        const foundPosts = await Post.find({ photoUrl: { $in: [req.body.photoUrl[0]] } });
+        alreadyPresentPost = foundPosts[0];
+      }
+      else if (req.body?.artText?.length === 1) {
+        const foundPosts = await Post.find({ artText: { $in: [req.body.artText[0]] } });
+        alreadyPresentPost = foundPosts[0];
       }
       try {
         if (Array.isArray(req.body.comments) && req.body.comments.length > 0) {
@@ -53,7 +67,7 @@ export default async function handler(req, res) {
           }
         }
         if (alreadyPresentPost) {
-          alreadyPresentPost.comments = [req.body.comments[0], ...(alreadyPresentPost.comments)];
+          if(req.body.comments) alreadyPresentPost.comments = [req.body.comments[0], ...(alreadyPresentPost.comments)];
           await alreadyPresentPost.save();
           return res.status(202).json(alreadyPresentPost);
         }
@@ -62,7 +76,7 @@ export default async function handler(req, res) {
         res.status(201).json(video);
       } catch (error) {
         console.log(error.message);
-        res.status(400).json({ success: false,error });
+        res.status(400).json({ success: false, error });
       }
       break;
     case 'DELETE':
@@ -70,7 +84,7 @@ export default async function handler(req, res) {
         const result = await Post.deleteMany();
         res.status(201).json(result.deletedCount);
       } catch (err) {
-        res.status(400).json({ success: false,err });
+        res.status(400).json({ success: false, err });
         console.error("Could not delete");
       }
       break;

@@ -173,7 +173,7 @@ const PostDetail = ({ post }) => {
                                     />
                                 }
                                 {p.type === 'text' &&
-                                    <div className='art-text-card' onClick={showMedia}>{p.src}</div>
+                                    <div className={`art-text-card art-text-main-post${mediaLister.length < 3 ? '-no-hover-zoom' : ''}`} onClick={showMedia}>{p.src}</div>
                                 }
 
                             </div>
