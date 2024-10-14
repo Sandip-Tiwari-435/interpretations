@@ -38,7 +38,7 @@ export default function Navbar() {
     const currentUrl = router.asPath;
     const newUrl = `/search/${search}/${category}`;
 
-    if (currentUrl.includes(newUrl)) {
+    if (!currentUrl.includes(newUrl)) {
       router.push(newUrl, undefined, { shallow: false });
       setIsMenuOpen(false);
     }
