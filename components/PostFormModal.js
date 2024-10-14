@@ -118,7 +118,15 @@ const PostFormModal = () => {
       const obj = await res.json();
 
       if (res.ok) {
-
+        setIsModalOpen(false);
+        setCustomCategory('');
+        setCategory('uncategorised');
+        setComment('');
+        setErrorMessage('');
+        setArtText(['']);
+        setVideoUrl(['']);
+        setImageUrl(['']);
+        setTitle('');
         router.push(`/watch?v=${obj._id}`);
       } else {
         throw new Error(obj.message || 'Something went wrong');
@@ -127,15 +135,7 @@ const PostFormModal = () => {
     } catch (error) {
       setErrorMessage(error.message);
     } finally {
-      setIsModalOpen(false);
-      setCustomCategory('');
-      setCategory('uncategorised');
-      setComment('');
-      setErrorMessage('');
-      setArtText(['']);
-      setVideoUrl(['']);
-      setImageUrl(['']);
-      setTitle('');
+
       setIsSubmitting(false);
     }
 
