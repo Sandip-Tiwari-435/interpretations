@@ -484,12 +484,14 @@ textarea {
   scale: 2;
   z-index: 1000;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .art-text-main-post:hover {
   scale: 2;
   z-index: 1000;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 
 .photo-main-post-no-hover-zoom {
