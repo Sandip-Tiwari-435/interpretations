@@ -465,9 +465,16 @@ textarea {
   justify-content: center;
 }
 
-.collage-item iframe:hover{
+.collage-item:hover{
   scale: 2;
-  z-index: 1000;
+  z-index: 10;
+  cursor: pointer;
+  /* cursor:auto; */
+  transition: all 0.2s ease;
+}
+
+.collage-item iframe:hover{
+  cursor: default;
 }
 
 .collage-item-no-hover-zoom {
@@ -478,20 +485,6 @@ textarea {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
-}
-
-.photo-main-post:hover {
-  scale: 2;
-  z-index: 1000;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
-}
-
-.art-text-main-post:hover {
-  scale: 2;
-  z-index: 1000;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
 }
 
 .photo-main-post-no-hover-zoom {
@@ -514,6 +507,10 @@ textarea {
   border-radius: 50%;
   font-size: 16px;
   font-weight: bold;
+}
+
+.overlay:hover{
+  opacity: 0;
 }
 
 .switch-container {
@@ -739,7 +736,6 @@ input:checked+.slider:before {
   transition: opacity 0.3s ease-in-out;
   color: white;
   width: 100%;
-  z-index: 1000;
 }
 
 .add-media {
@@ -838,6 +834,14 @@ form::-webkit-scrollbar {
     font-size: 1.7em;
   }
 
+  .watchpage-header{
+    margin: 0;
+  }
+
+  .caution-message:hover{
+font-size:smaller;
+  }
+
   .nav-wrapper-sidebar {
     flex-grow: 1;
     max-height: 100%;
@@ -853,8 +857,12 @@ form::-webkit-scrollbar {
   }
 
   .collage-item:hover {
-    scale: unset;
+    scale:unset;
     z-index: 0;
+  }
+
+  .overlay{
+    z-index: 20;
   }
 
   .floating-button-custom {
@@ -878,5 +886,9 @@ form::-webkit-scrollbar {
     transition: none;
     width: 100%;
     z-index: 1000;
+  }
+
+  .overlay:hover{
+    opacity: 1;
   }
 }
