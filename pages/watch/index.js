@@ -155,7 +155,7 @@ const PostDetail = ({ post }) => {
     return (
         <div className="container" key={post?._id + '-container'}>
             <MediaViewer isMediaOpen={isMediaOpen} textToShow={textToShow} imgToShow={imgToShow} vidToShow={vidToShow} toggleMediaOpen={toggleMediaOpen} timeToSeekTo={timeToSeekTo} />
-            {post ? (<><h1>{post.title}</h1>
+            {post ? (<><h1 className={'watchpage-header'}>{post.title}</h1>
                 <div className={`image-collage ${mediaLister.length > 2 ? "grid" : ""}`}>
                     {
                         mediaLister && mediaLister.map((p, index) =>
