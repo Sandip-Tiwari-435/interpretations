@@ -465,10 +465,10 @@ textarea {
   justify-content: center;
 }
 
-/* .collage-item:hover{
+.collage-item iframe:hover{
   scale: 2;
   z-index: 1000;
-} */
+}
 
 .collage-item-no-hover-zoom {
   width: 100%;
