@@ -465,16 +465,12 @@ textarea {
   justify-content: center;
 }
 
-.collage-item:hover{
+.collage-item iframe:hover{
   scale: 2;
   z-index: 10;
-  cursor: pointer;
+  cursor: default;
   /* cursor:auto; */
   transition: all 0.2s ease;
-}
-
-.collage-item iframe:hover{
-  cursor: default;
 }
 
 .collage-item-no-hover-zoom {
@@ -485,6 +481,15 @@ textarea {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  scale: unset;
+}
+
+.photo-main-post:hover{
+  scale: 2;
+  z-index: 10;
+  cursor: pointer;
+  /* cursor:auto; */
+  transition: all 0.2s ease-in-out;
 }
 
 .photo-main-post-no-hover-zoom {
@@ -495,6 +500,14 @@ textarea {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+}
+
+.art-text-main-post:hover{
+  scale: 2;
+  z-index: 10;
+  cursor: pointer;
+  /* cursor:auto; */
+  transition: all 0.2s ease;
 }
 
 .overlay {
@@ -860,6 +873,12 @@ font-size:smaller;
     scale:unset;
     z-index: 0;
   }
+  .collage-item{
+    min-height: unset;
+  }
+  .collage-item iframe:hover{
+    scale: unset;
+  }
 
   .overlay{
     z-index: 20;
@@ -891,4 +910,5 @@ font-size:smaller;
   .overlay:hover{
     opacity: 1;
   }
+
 }
