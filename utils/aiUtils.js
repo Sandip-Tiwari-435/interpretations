@@ -21,8 +21,8 @@ export async function fetchResponseFromAi(prompt) {
             },
         ]
 
-        const genAi = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-        const model = genAi.getGenerativeModel({ model: process.env.GEMINI_MODEL, safetySettings: safetySettings, generationConfig:{"response_mime_type": "application/json"}});
+        var genAi = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+        var model = genAi.getGenerativeModel({ model: process.env.GEMINI_MODEL, safetySettings: safetySettings, generationConfig:{"response_mime_type": "application/json"}});
         const finalPrompt=process.env.CONTEXT + prompt;
         console.log("Prompt sent to AI",finalPrompt);
 
